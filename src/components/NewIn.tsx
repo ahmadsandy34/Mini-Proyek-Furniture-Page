@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Categories } from '../pages/Home';
 import CategoriesCard from './CategoriesCard';
 
@@ -7,14 +7,6 @@ interface NewInProps {
 }
 
 const NewIn: React.FC<NewInProps> = ({ categories }) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    const handleDrag = (e: React.MouseEvent) => {
-        if (containerRef.current) {
-            containerRef.current.scrollLeft -= e.movementX;
-        }
-    };
-
     return (
         <section className="w-4/5 mx-auto mt-20">
             <div className="flex flex-col lg:flex-row gap-5 lg:gap-20 items-center justify-center">
@@ -30,9 +22,7 @@ const NewIn: React.FC<NewInProps> = ({ categories }) => {
                     </div>
                 </div>
                 <div
-                    className="overflow-x-auto"
-                    ref={containerRef}
-                    onMouseMove={handleDrag}
+                    className="overflow-x-scroll"
                 >
                     <div className="flex flex-row gap-5">
                         {categories.map((categories, index) => (

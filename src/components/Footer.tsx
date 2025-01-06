@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     const shareUrl = 'http://github.com';
     return (
         <>
-            <nav className="bg-black text-white text-left pt-8 lg:pt-16 pb-4">
+            <footer className="bg-black text-white text-left pt-8 lg:pt-16 pb-4">
                 <div className="w-3/4 mx-auto flex flex-col lg:flex-row justify-between  mb-4">
                     <div className="">
                         <p className="text-2xl font-bold">FurniShop</p>
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                         <p className="mb-4">Support</p>
                         <p className="mb-4">Guide</p>
                     </div>
-                    <div className="text-sm lg:justify-self-center">
+                    <div>
                         <p className="text-lg font-medium mb-4">Top Features</p>
                         <p className="mb-4">Ticketing System</p>
                         <p className="mb-4">Knowledge Base</p>
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                 <div className="w-3/4 mx-auto text-center mt-12">
                     <p className="text-sm">© NameBrand 2022 - All Rights Reserved</p>
                 </div>
-            </nav>
+            </footer>
         </>
     )
 }

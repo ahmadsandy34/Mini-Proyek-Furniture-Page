@@ -21,7 +21,7 @@ const Testi: React.FC<TestimonialProps> = ({ testimonials }) => {
                 <div className="flex lg:flex-row flex-col items-center justify-center gap-5 lg:gap-20">
                     <div className="w-full max-w-lg">
                         <p className='text-2xl lg:text-[40px] lg:leading-[52px] font-semibold pb-2 lg:pb-8 text-left'>What People Are Saying About Us</p>
-                        <div className="">
+                        <div>
                             <Swiper
                                 slidesPerView={1}
                                 spaceBetween={30}
@@ -30,7 +30,6 @@ const Testi: React.FC<TestimonialProps> = ({ testimonials }) => {
                                 autoplay={{ delay: 2500, disableOnInteraction: false }}
                                 grabCursor={true}
                                 modules={[Pagination, Autoplay]}
-                                className="mySwiper"
                             >
                                 {testimonial.map((testi) => (
                                     <SwiperSlide key={testi.id}>

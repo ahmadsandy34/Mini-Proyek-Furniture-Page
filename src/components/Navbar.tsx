@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../assets/nav.svg';
 
 const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [activeLink, setActiveLink] = useState<string>('Home');
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
-    const handleScroll = () => {
-        const scrollTop = window.scrollY;
-        setIsScrolled(scrollTop > 650);
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     const handleLinkClick = (link: string) => {
         setActiveLink(link);
@@ -30,8 +17,8 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className={`navbar fixed top-8 left-0 right-0 z-50 transition-all duration-300 mx-auto lg:w-4/5 ${isScrolled ? 'bg-transparent text-black' : 'bg-transparent text-white'
-                }`}
+            className="navbar absolute top-8 left-0 right-0 z-50 transition-all duration-300 mx-auto lg:w-4/5 bg-transparent text-white"
+                
         >
             <div className="flex-1">
                 <Link to="/" onClick={() => handleLinkClick('Home')}>
@@ -61,9 +48,6 @@ const Navbar: React.FC = () => {
                         <img
                             src={Nav}
                             alt="Nav"
-                            className={`transition-colors duration-300 ${
-                                isScrolled || isMenuOpen ? 'brightness-0' : ''
-                            }`}
                         />
                     </button>
                 </div>
